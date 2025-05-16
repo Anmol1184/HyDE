@@ -1,0 +1,7 @@
+ "custom/updatess": {
+
+        "format": "<span font_family='Font Awesome 6 Free'> 󰮯</span> {}",
+    "exec": "$HOME/.config/waybar/modules/zig/updates",
+        "return-type": "json",
+    "interval": 3600
+},

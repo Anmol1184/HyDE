@@ -1,0 +1,6 @@
+  "custom/logo": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "$HOME/.local/lib/hyde/rofilaunch.sh &"
+        
+        },

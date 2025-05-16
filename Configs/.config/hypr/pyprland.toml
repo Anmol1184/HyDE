@@ -1,0 +1,15 @@
+
+[pyprland]
+plugins = [
+    "wallpapers",
+    "workspaces_follow_focus"
+]
+[wallpapers]
+unique = true # set a different wallpaper for each screen
+path = "~/Pictures/imo/"
+interval = 30 # change every hour
+extensions = ["jpg", "jpeg", "gif"]
+recurse = true
+## Using swww
+command = 'swww img --transition-type any "[file]"'
+clear_command = "swww clear"

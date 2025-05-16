@@ -4,22 +4,13 @@ import os
 import sys
 import json
 from datetime import datetime
-
-
-import pyutils.pip_env as pip_env
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-pip_env.v_import(
-    "requests"
-)  # fetches the module by name // does `pip install --update requests` under the hood
-import requests  # noqa: E402
-
+import requests
 
 ### Constants ###
 WEATHER_CODES = {
-    **dict.fromkeys(["113"], "☀️ "),
-    **dict.fromkeys(["116"], "⛅ "),
-    **dict.fromkeys(["119", "122", "143", "248", "260"], "☁️ "),
+    **dict.fromkeys(["113"], "☀️"),
+    **dict.fromkeys(["116"], "⛅"),
+    **dict.fromkeys(["119", "122", "143", "248", "260"], "☁️"),
     **dict.fromkeys(
         [
             "176",
@@ -48,19 +39,19 @@ WEATHER_CODES = {
             "368",
             "392",
         ],
-        "🌧️ ",
+        "🌧️",
     ),
-    **dict.fromkeys(["200"], "⛈️ "),
+    **dict.fromkeys(["200"], "⛈️"),
     **dict.fromkeys(
-        ["227", "230", "320", "323", "326", "374", "377", "386", "389"], "🌨️ "
+        ["227", "230", "320", "323", "326", "374", "377", "386", "389"], "🌨️"
     ),
-    **dict.fromkeys(["329", "332", "335", "338", "371", "395"], "❄️ "),
+    **dict.fromkeys(["329", "332", "335", "338", "371", "395"], "❄️"),
 }
 
 
 ### Functions ###
 def load_env_file(filepath):
-    with open(filepath, encoding="utf-8") as f:
+    with open(filepath, encoding='utf-8') as f:
         for line in f:
             if line.strip() and not line.startswith("#"):
                 if line.startswith("export "):
@@ -181,7 +172,7 @@ temp_unit = os.getenv(
     "WEATHER_TEMPERATURE_UNIT", "c"
 ).lower()  # c or f            (default: c)
 time_format = os.getenv(
-    "WEATHER_TIME_FORMAT", "12h"
+    "WEATHER_TIME_FORMAT", "24h"
 ).lower()  # 12h or 24h        (default: 12h)
 windspeed_unit = os.getenv(
     "WEATHER_WINDSPEED_UNIT", "km/h"
@@ -213,9 +204,9 @@ try:
     )  # Number of days to show the forecast for (default: 3)
 except ValueError:
     FORECAST_DAYS = 3
-get_location = os.getenv("WEATHER_LOCATION", "").replace(
-    " ", "_"
-)  # Name of the location to get the weather from (default: '')
+get_location = os.getenv(
+    "WEATHER_LOCATION", " "
+).replace(" ", "_")  # Name of the location to get the weather from (default: '')
 # Parse the location to wttr.in format (snake_case)
 
 # Check if the variables are set correctly

@@ -1,0 +1,5 @@
+    "custom/ping": {
+       "exec": "$HOME/.config/waybar/modules/zig-waybar-contrib/zig-out/bin/ping",
+        "return-type": "json",
+        "interval": 3600
+    },

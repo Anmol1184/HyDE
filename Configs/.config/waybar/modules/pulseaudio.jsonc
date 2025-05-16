@@ -1,5 +1,5 @@
 "pulseaudio": {
-    "format": "{icon} {volume}",
+    "format": "{icon}",
     "rotate": ${r_deg},
     "format-muted": "婢",
     "on-click": "pavucontrol -t 3",
@@ -32,4 +32,3 @@
     "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
     "scroll-step": 5
 },
-
